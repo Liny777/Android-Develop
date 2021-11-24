@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#c9eef6"
+        app:navigationIcon="@drawable/back2"
+        app:title="ChatRoom"
+        app:titleMarginStart="70dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="#005880" />
+
+    <TableLayout
+        android:id="@+id/bottom_content"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+        <TableRow
+            android:layout_height="3dp">
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+        </TableRow>
+        <TableRow>
+            <TableRow android:layout_weight="15">
+                <EditText
+                    android:inputType="none"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:id = "@+id/MessageText"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="26dp"
+                android:layout_height="50dp"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/button_main"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/sendbutton" />
+            </TableRow>
+        </TableRow>
+    </TableLayout>
+
+    <ListView
+        android:id="@+id/lv_main"
+        android:layout_width="match_parent"
+        android:layout_height="624dp"
+        android:layout_above="@+id/bottom_content"
+        android:layout_below="@+id/tb"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="-1dp"
+        android:divider="@null"
+        android:stackFromBottom="true" />
+
+
+</RelativeLayout>
